@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">InterpolationDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="interpolators">
+        <item>AccelerateDecelerateInterpolator</item>
+        <item>AccelerateInterpolator</item>
+        <item>AnticipateInterpolator</item>
+        <item>AnticipateOvershootInterpolator</item>
+        <item>BounceInterpolator</item>
+        <item>DecelerateInterpolator</item>
+        <item>LinearInterpolator</item>
+        <item>OvershootInterpolator</item>
+    </string-array>
+
+    <string-array name="durations">
+        <item>100ms</item>
+        <item>300ms</item>
+        <item>900ms</item>
+        <item>1500ms</item>
+        <item>3000ms</item>
+    </string-array>
+</resources>

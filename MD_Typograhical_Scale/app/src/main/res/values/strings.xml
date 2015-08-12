@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Type Demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="display4">Display 4</string>
+    <string name="display3">Display 3</string>
+    <string name="display2">Display 2</string>
+    <string name="display1">Display 1</string>
+
+    <string name="headline">Headline</string>
+    <string name="title">Title</string>
+    <string name="subhead">Subhead</string>
+    <string name="body2">Body 2</string>
+    <string name="body1">Body 1</string>
+
+    <string name="caption">Caption</string>
+    <string name="button">Button</string>
+</resources>

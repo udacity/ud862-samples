@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:layout_width="289dp"
+        android:layout_height="445dp"
+        android:id="@+id/webView" />
+
+    <android.support.design.widget.FloatingActionButton
+        app:fabSize="normal"
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/fab_plus"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/webView"
+        app:borderWidth="0dp"
+        app:layout_anchorGravity="bottom|right|end"
+        />
+
+</LinearLayout>

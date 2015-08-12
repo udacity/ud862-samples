@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <View android:layout_height="32dp"
+        android:background="@android:color/holo_blue_light"
+        android:layout_width="32dp"
+        android:id="@+id/color_swatch"
+        android:layout_marginRight="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:id="@+id/color_title"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>
