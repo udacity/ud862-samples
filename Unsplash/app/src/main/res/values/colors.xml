@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#00BCD4</color>
+    <!--<color name="primary_dark">#00ACC1</color>-->
+    <color name="primary_dark">#333</color>
+    <color name="accent">#FFFF00</color>
+    <color name="placeholder">#ddd</color>
+    <color name="grey_ripple">#8ddd</color>
+
+</resources>

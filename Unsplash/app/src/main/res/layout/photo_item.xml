@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.unsplash.ui.ForegroundImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photo"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/image_height"
+    android:scaleType="centerCrop"
+    android:foreground="@drawable/grey_ripple"
+    android:clickable="true"
+    android:stateListAnimator="@animator/raise"
+    android:transitionName="@string/transition_photo" />

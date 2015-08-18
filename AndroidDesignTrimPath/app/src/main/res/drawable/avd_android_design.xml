@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/android_design">
+
+    <target
+        android:name="andro"
+        android:animation="@animator/andro" />
+
+    <target
+        android:name="id"
+        android:animation="@animator/id" />
+
+    <target
+        android:name="a_stroke"
+        android:animation="@animator/a_stroke" />
+
+    <target
+        android:name="i_dot"
+        android:animation="@animator/i_dot" />
+
+    <target
+        android:name="d"
+        android:animation="@animator/d" />
+
+    <target
+        android:name="esig"
+        android:animation="@animator/esig" />
+
+    <target
+        android:name="n"
+        android:animation="@animator/n" />
+
+    <target
+        android:name="second_i_dot"
+        android:animation="@animator/second_i_dot" />
+
+</animated-vector>

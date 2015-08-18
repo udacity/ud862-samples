@@ -1,0 +1,13 @@
+<GridView
+    android:id="@+id/grid"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:horizontalSpacing="4dp"
+    android:verticalSpacing="4dp"
+    android:padding="4dp"
+    android:clipToPadding="false"
+    android:numColumns="2"
+    android:scrollbarStyle="outsideOverlay"
+    tools:context=".MainActivity" />

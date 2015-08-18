@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="174dp"
+    android:layout_height="174dp"
+    android:gravity="center"
+    android:textAppearance="@android:style/TextAppearance.Material.Display1"
+    android:textColor="#afff"
+    android:background="@drawable/grid_item_background"
+    android:transitionName="hero"/>

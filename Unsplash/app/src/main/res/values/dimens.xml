@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="image_height">200dp</dimen>
+    <dimen name="grid_item_spacing">2dp</dimen>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+    </style>
+
+    <style name="AppTheme.Home">
+
+    </style>
+
+    <style name="AppTheme.Details">
+        <item name="android:windowEnterTransition">@transition/slide_right</item>
+        <item name="android:windowTransitionBackgroundFadeDuration">900</item>
+        <!--<item name="android:windowSharedElementEnterTransition">@transition/hero</item>-->
+    </style>
+
+</resources>
