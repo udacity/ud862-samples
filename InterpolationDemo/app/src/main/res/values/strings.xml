@@ -5,6 +5,10 @@
     <string name="action_settings">Settings</string>
 
     <string-array name="interpolators">
+        <item>FastOutLinearInInterpolator</item>
+        <item>FastOutSlowInInterpolator</item>
+        <item>LinearOutSlowInInterpolator</item>
+        <item>----------</item>
         <item>AccelerateDecelerateInterpolator</item>
         <item>AccelerateInterpolator</item>
         <item>AnticipateInterpolator</item>

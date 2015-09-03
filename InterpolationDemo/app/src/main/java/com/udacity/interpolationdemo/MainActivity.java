@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.textView)TextView textView;
 
     private static final String PACKAGE = "android.view.animation.";
+    private static final String PACKAGE_V4 = "android.support.v4.view.animation.";
     private int duration;
     private Interpolator interpolator;
 
@@ -77,9 +78,8 @@ public class MainActivity extends AppCompatActivity {
     void durationSelected(Spinner spinner, int position) {
         String durationString = (String) spinner.getAdapter().getItem(position);
         switch(durationString) {
-            case "300ms":
-                duration = 300;
-                break;
+            case "100ms":
+                duration = 100;
             case "900ms":
                 duration = 900;
                 break;
@@ -90,12 +90,20 @@ public class MainActivity extends AppCompatActivity {
                 duration = 3000;
                 break;
             default:
-                duration = 100;
+                duration = 300;
                 break;
         }
         // Kick off transition
         int item = interpolatorSpinner.getSelectedItemPosition();
         onItemSelected(interpolatorSpinner, position);
+    }
+
+    String findFullInterpolatorPath(String className) {
+        if (className.equals("FastOutLinearInInterpolator") || className.equals("FastOutSlowInInterpolator") || className.equals("LinearOutSlowInInterpolator"))
+            return PACKAGE_V4 + className;
+        else if (className.startsWith("-"))
+            return null;
+        else return PACKAGE + className;
     }
 
     @OnItemSelected({R.id.interpolator_spinner})
@@ -106,7 +114,11 @@ public class MainActivity extends AppCompatActivity {
         textView.setTranslationY(metrics.heightPixels);
 
         try {
-            interpolator = (Interpolator) Class.forName(PACKAGE + interpolatorName).newInstance();
+            String path = findFullInterpolatorPath(interpolatorName);
+            if (path == null)
+                return;
+
+            interpolator = (Interpolator) Class.forName(path).newInstance();
             textView.animate().setInterpolator(interpolator)
                     .setDuration(duration)
                     .setStartDelay(500)
@@ -121,4 +133,5 @@ public class MainActivity extends AppCompatActivity {
     void onNothingSelected() {
 
     }
+
 }
