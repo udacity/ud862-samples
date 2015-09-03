@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.applypalettedemo;
+package com.example.android.papertransformations;
 
 import android.animation.Animator;
 import android.app.Activity;
@@ -92,8 +92,7 @@ public class MainActivity extends Activity {
         public void onClick(View view) {
             boolean isVeggie = ((ColorDrawable)view.getBackground()) != null && ((ColorDrawable)view.getBackground()).getColor() == green;
 
-            TransitionManager.beginDelayedTransition((ViewGroup) view);
-            int finalRadius = Math.max(view.getWidth(), view.getHeight()) / 2;
+            int finalRadius = (int)Math.hypot(view.getWidth()/2, view.getHeight()/2);
 
             if (isVeggie) {
                 text1.setText(baconTitle);
