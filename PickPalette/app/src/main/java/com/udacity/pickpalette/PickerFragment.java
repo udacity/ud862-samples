@@ -71,9 +71,6 @@ public class PickerFragment extends DialogFragment {
 
     @OnClick(R.id.pickImage)
     void pickImage(View view) {
-//        Snackbar.make(getView(), "I want to pick an image.", Snackbar.LENGTH_SHORT)
-//                .show();
-
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, PICK_PHOTO);
@@ -106,6 +103,10 @@ public class PickerFragment extends DialogFragment {
             case TAKE_PHOTO:
                 if (resultCode == Activity.RESULT_OK) {
                     Log.d(TAG, "Took a photo.");
+                    Bundle extras = data.getExtras();
+                    Bitmap imageBitmap = (Bitmap) extras.get("data");
+                    ((MainActivity)getActivity()).createPalette(imageBitmap);
+                    getDialog().dismiss();
                 }
         }
     }

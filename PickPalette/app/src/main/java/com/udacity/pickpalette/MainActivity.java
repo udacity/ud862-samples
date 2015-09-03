@@ -24,7 +24,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -37,21 +36,26 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import butterknife.OnItemClick;
 
 public class MainActivity extends Activity {
 
-    @InjectView(R.id.fab)FloatingActionButton fab;
+    @InjectView(R.id.fab)
+    FloatingActionButton fab;
     SwatchAdapter swatchAdapter;
-    @InjectView(R.id.grid_view)GridView gridView;
-    @InjectView(R.id.tool_bar)Toolbar toolbar;
+    @InjectView(R.id.grid_view)
+    GridView gridView;
+    @InjectView(R.id.tool_bar)
+    Toolbar toolbar;
+    @InjectView(R.id.imageView)
+    ImageView imageView;
+    int numPixels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +93,7 @@ public class MainActivity extends Activity {
     }
 
     @OnClick(R.id.fab)
-    public void click(View view) {
+    public void click(View view){
         Snackbar.make(findViewById(R.id.fragment), "Clicked FAB.", Snackbar.LENGTH_LONG)
                 //.setAction("Action", this)
                 .show();
@@ -103,26 +107,29 @@ public class MainActivity extends Activity {
 
     }
 
-    public void createPalette(Uri imageUri) {
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        Picasso.with(this).load(imageUri).into(imageView);
-
-        // Do this async on activity
+    public void createPalette(Object object){
+        Bitmap bitmap;
         try {
-            InputStream imageStream = getContentResolver().openInputStream(imageUri);
-            Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+            if (object instanceof Uri) {
+                Uri imageUri = (Uri) object;
+                Picasso.with(this).load(imageUri).into(imageView);
+                InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                bitmap = BitmapFactory.decodeStream(imageStream);
+            } else {
+                bitmap = (Bitmap) object;
+                imageView.setImageBitmap(bitmap);
+            }
+
+            // Do this async on activity
 
             Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
                 @Override
                 public void onGenerated(Palette palette) {
-                    HashMap<String, Integer> swatches = processPalette(palette);
-                    Object[] entries = swatches.entrySet().toArray();
-                    swatchAdapter = new SwatchAdapter(getApplicationContext(), entries);
-
+                    HashMap map = processPalette(palette);
+                    swatchAdapter = new SwatchAdapter(getApplicationContext(), map.entrySet().toArray());
                     gridView.setAdapter(swatchAdapter);
                 }
             });
-
 
 
         } catch (Exception ex) {
@@ -130,23 +137,35 @@ public class MainActivity extends Activity {
         }
     }
 
-    HashMap<String,Integer> processPalette (Palette p) {
-        HashMap<String, Integer> map = new HashMap<>();
+    HashMap<String, Palette.Swatch> processPalette(Palette p) {
+        HashMap<String, Palette.Swatch> map = new HashMap<>();
 
         if (p.getVibrantSwatch() != null)
-            map.put("Vibrant", p.getVibrantSwatch().getRgb());
+            map.put("Vibrant", p.getVibrantSwatch());
         if (p.getDarkVibrantSwatch() != null)
-            map.put("DarkVibrant", p.getDarkVibrantSwatch().getRgb());
+            map.put("DarkVibrant", p.getDarkVibrantSwatch());
         if (p.getLightVibrantSwatch() != null)
-            map.put("LightVibrant", p.getLightVibrantSwatch().getRgb());
+            map.put("LightVibrant", p.getLightVibrantSwatch());
 
         if (p.getMutedSwatch() != null)
-            map.put("Muted", p.getMutedSwatch().getRgb());
+            map.put("Muted", p.getMutedSwatch());
         if (p.getDarkMutedSwatch() != null)
-            map.put("DarkMuted", p.getDarkMutedSwatch().getRgb());
+            map.put("DarkMuted", p.getDarkMutedSwatch());
         if (p.getLightMutedSwatch() != null)
-            map.put("LightMuted", p.getLightMutedSwatch().getRgb());
+            map.put("LightMuted", p.getLightMutedSwatch());
 
         return map;
     }
+
+    @OnItemClick(R.id.grid_view)
+    void onItemClick(int position) {
+        Palette.Swatch swatch = ((Map.Entry<String, Palette.Swatch>) gridView.getItemAtPosition(position)).getValue();
+
+        StringBuilder b = new StringBuilder();
+        b.append("Title Text Color: ").append("#" + Integer.toHexString(swatch.getBodyTextColor()).toUpperCase()).append("\n");
+        b.append("Population: ").append(swatch.getPopulation());
+
+        Snackbar.make(gridView, b.toString(), Snackbar.LENGTH_LONG).show();
+    }
+
 }
