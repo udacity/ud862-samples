@@ -50,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click(View view) {
-        Fade fade = new Fade();
-        fade.setDuration(1500);
-
         Slide slide = new Slide();
         slide.setSlideEdge(Gravity.TOP);
 
