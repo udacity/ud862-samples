@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="450">
+    <changeBounds/>
+    <changeTransform/>
+    <changeClipBounds/>
+    <changeImageTransform/>
+    <!-- Here we're using arc motion which handles the curved path for us.
+         Also see PathMotion and PatternPathMotion for other techniques  -->
+    <arcMotion android:minimumHorizontalAngle="50" android:minimumVerticalAngle="50" />
+</transitionSet>

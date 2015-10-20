@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingEnd="16dp"
+    android:orientation="horizontal"
+    android:background="?android:selectableItemBackground"
+    android:transitionGroup="false">
+    
+    <View
+        android:id="@+id/avatar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/avatar"
+        android:transitionName="@string/transition_avatar"/>
+
+    <!-- some skeleton approximating text -->
+    <View
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_toEndOf="@id/avatar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#bbb" />
+
+    <View
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_toEndOf="@id/avatar"
+        android:layout_below="@id/title"
+        android:layout_alignParentEnd="true"
+        android:background="#ccc" />
+
+</RelativeLayout>

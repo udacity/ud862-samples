@@ -1,0 +1,98 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.coordinatedmotion.MultipleElements">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="containerClick"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card4"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card5"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card6"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

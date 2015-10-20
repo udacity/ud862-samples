@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CoordinatedMotion</string>
+    <string name="transition_avatar">avatar</string>
+</resources>
