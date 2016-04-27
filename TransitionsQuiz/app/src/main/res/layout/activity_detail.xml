@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.l4_06_q.DetailActivity">
+    tools:context="com.example.android.transitionsquiz.DetailActivity">
 
     <TextView
         android:layout_width="match_parent"

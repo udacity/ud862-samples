@@ -1,4 +1,4 @@
-package com.example.android.l4_06_q;
+package com.example.android.transitionsquiz;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
