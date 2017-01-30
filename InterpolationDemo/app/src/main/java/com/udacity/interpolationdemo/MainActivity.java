@@ -15,29 +15,24 @@
  */
 package com.udacity.interpolationdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.internal.widget.AdapterViewCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.Interpolator;
-import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnItemSelected;
-import butterknife.OnItemSelected.Callback.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.interpolator_spinner)Spinner interpolatorSpinner;
-    @Bind(R.id.duration_spinner)Spinner duratorSpinner;
-    @Bind(R.id.textView)TextView textView;
+    @BindView(R.id.interpolator_spinner)Spinner interpolatorSpinner;
+    @BindView(R.id.duration_spinner)Spinner duratorSpinner;
+    @BindView(R.id.textView)TextView textView;
 
     private static final String PACKAGE = "android.view.animation.";
     private static final String PACKAGE_V4 = "android.support.v4.view.animation.";
