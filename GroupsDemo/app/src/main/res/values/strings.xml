@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ConstraintLayout Groups Demo</string>
+    <string name="company_name">Hahn\'s Produce Barn</string>
+    <string name="location">5, rue Laurent Lavoisier\n59370 Mons-en-Barœul, France </string>
+    <string name="company_label">Company Name</string>
+    <string name="location_label">Address</string>
+    <string name="phone">555-555-5555</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="hide_details">Hide Contact Details</string>
+    <string name="show_details">Show Contact Details</string>
+</resources>
