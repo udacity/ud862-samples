@@ -84,10 +84,9 @@
 
     <android.support.constraint.Group
         android:id="@+id/group"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:constraint_referenced_ids="locationLabel,locationDetails,phoneLabel,phoneDetails"
-    />
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="locationLabel,locationDetails,phoneLabel,phoneDetails" />
 
     <Button
         android:id="@+id/button"
@@ -98,5 +97,11 @@
         android:text="@string/hide_details"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/phoneLabel" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
 
 </android.support.constraint.ConstraintLayout>
