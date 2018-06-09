@@ -1,0 +1,46 @@
+buildscript {
+    ext {
+        kotlin_version = '1.2.10'
+        xChart_version = '3.5.2'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group 'ProfilerChart'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = "ProfilerChartKt"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "org.knowm.xchart:xchart:$xChart_version"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+// Allows arguments to be passed via gradle run
+//gradle run -PappArgs="['arg1', 'arg2]"
+run {
+    if (project.hasProperty("appArgs")) {
+        args appArgs
+    }
+}
+
